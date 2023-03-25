@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "fb6a14bf-cab2-4b20-945a-c4b8a0b26790",
+		"name": "QuizTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24532127"
+	},
+	"item": [
+		{
+			"name": "Create New Quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"computer science\",\r\n    \"description\":  \"test and learn\",\r\n    \"type\": \"publish\",\r\n    \"questions\":[\r\n    {\r\n    \"question\": \"To activate the cursor that selects all the images in the timeline, just click on the key:\",\r\n    \"mandatory\":true,\r\n    \"answers\": [\r\n        {\r\n            \"answer\": \"C\",\r\n            \"type\":true\r\n        },\r\n        {\r\n            \"answer\": \"A\",\r\n            \"type\": false\r\n        },\r\n         {\r\n            \"answer\": \"V\",\r\n            \"type\": false\r\n        }\r\n\r\n    ]\r\n    },\r\n    {\r\n    \"question\": \"The frame rate can be indicated  by the acronym\",\r\n    \"mandatory\":true,\r\n    \"answers\": [\r\n        {\r\n            \"answer\": \"FPS\",\r\n            \"type\":true\r\n        },\r\n        {\r\n            \"answer\": \"ATL\",\r\n            \"type\": false\r\n        },\r\n         {\r\n            \"answer\": \"CROSS\",\r\n            \"type\": false\r\n        }\r\n\r\n    ]\r\n    },\r\n    {\r\n    \"question\": \"To resize an image just go to the tab:\",\r\n    \"mandatory\":true,\r\n    \"answers\": [\r\n        {\r\n            \"answer\": \"position control\",\r\n            \"type\":true\r\n        },\r\n        {\r\n            \"answer\": \"scale control\",\r\n            \"type\": false\r\n        },\r\n         {\r\n            \"answer\": \"effect control\",\r\n            \"type\": false\r\n        }\r\n\r\n    ]\r\n    }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/quiz/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"quiz",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quiz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/v1/quiz/:quiz_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"quiz",
+						":quiz_id"
+					],
+					"variable": [
+						{
+							"key": "quiz_id",
+							"value": "28"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Quiz Response",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quizId\":11,\r\n    \"questionId\":3,\r\n    \"answerId\":44\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/v1/quiz/submit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"v1",
+						"quiz",
+						"submit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
